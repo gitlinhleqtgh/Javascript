@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <script>
+        var obj1 = new Object()
+        obj1.myProperty = "abc"
+        var obj2 = obj1
+        obj1.salary = 100
+        console.log(obj1.salary)
+        console.log(obj2.myProperty)
+        obj1 = null
+        obj2 = null
+
+        var products = new Array()
+        var date = new Date()
+        var err = new Error("error")
+        var myFunc = new Function(console.log(obj1))
+        var regEx = new RegExp("\\d+")
+    </script>
+</head>
+
+</html>
