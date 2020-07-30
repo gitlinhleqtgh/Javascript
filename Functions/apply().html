@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function displayDetail(love) {
+            console.log(this.id);
+            console.log(this.name);
+            console.log(love);
+        }
+        var student1 = { id: 1, name: "linh" };
+        var student2 = { id: 2, name: "tram" };
+        this.id = 3;
+        this.name = "baby";
+        displayDetail.apply(student1, [1000]);
+        displayDetail.apply(student2, [1000]);
+        displayDetail.apply(this, [3000]);
+
+
+        var displayForStudent1 = displayDetail.bind(student1);
+        displayForStudent1(1000);
+        var displayForStudent2 = displayDetail.bind(student2, [2000]);
+        displayForStudent2();
+        displayForStudent2.displayDetail = displayForStudent1;
+        displayForStudent2.displayDetail(4000)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

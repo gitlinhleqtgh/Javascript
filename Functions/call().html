@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function displayDetail() {
+            console.log(this.id);
+            console.log(this.name);
+        }
+        var daddy = { id: 1, name: "linh" };
+        var mommy = { id: 2, name: "tram" };
+
+        this.id = 3;
+        this.name = "baby"
+
+        displayDetail.call(daddy);
+        displayDetail.call(mommy);
+        displayDetail.call();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
