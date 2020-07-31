@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var product = {
+            name: "Iphone"
+        }
+        console.log(Object.isExtensible(product));
+        console.log(Object.isSealed(product));
+        Object.seal(product);
+        console.log(Object.isExtensible(product));
+        console.log(Object.isSealed(product));
+        product.price = "500$";
+        console.log("price" in product);
+        product.name = "Imac"
+        console.log(product.name)
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

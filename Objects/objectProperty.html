@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var person1 = {
+            id: 1,
+            name: "who ?"
+        }
+        var person2 = new Object();
+        person2.id = 2;
+        person2.name = "tram";
+        person1.name = "linh";
+        person1.love = 3000;
+        delete person1.love;
+
+        console.log(person1, person2)
+        console.log("name" in person1);
+        console.log("iid" in person1);
+        console.log("toString" in person1);
+        console.log(person1.hasOwnProperty("toString"));
+
+        for (var eachProperty in person1) {
+            console.log(eachProperty);
+            console.log(person1[eachProperty]);
+        }
+        var allProperties = Object.keys(person2);
+        for (var i = 0; i < allProperties.length; i++) {
+            console.log(allProperties[i]);
+            console.log(person2[allProperties[i]]);
+        }
+        console.log(person1.propertyIsEnumerable("id"));
+        console.log(person1.propertyIsEnumerable("length"));
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

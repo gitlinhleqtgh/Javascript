@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var creditCard = {
+            _name: 'John'
+        };
+        Object.defineProperty(creditCard, "name", {
+            get: function () {
+                return this._name;
+            }
+        });
+        console.log('name' in creditCard);
+        console.log(creditCard.propertyIsEnumerable("name"));
+        delete creditCard._name;
+        console.log("name" in creditCard);
+        creditCard._name = "Bob";
+        console.log(creditCard._name);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

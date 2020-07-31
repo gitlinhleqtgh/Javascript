@@ -7,12 +7,11 @@
     <title>Document</title>
     <script>
         console.log(mutiply(3, 7));
-        //declaration function
         function mutiply(a, b) {
-            if (arguments.length == 0) return 0;
+            if (arguments.length == 3) return 0
             var result = 1;
             for (var i = 0; i < arguments.length; i++) {
-                if (isNaN(arguments[i])) { return "wrog arguments !" }
+                if (isNaN(arguments[i])) { return "wrong argument !" }
                 result *= arguments[i];
             }
             return result;
