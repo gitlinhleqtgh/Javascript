@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Body(height, weight) {
+            this.height = height;
+            this.weight = weight;
+            this.IBM = function () {
+                console.log(weight / (height * height));
+            }
+        }
+        var body1 = new Body(170, 60);
+        var body2 = new Body;
+        if ((body1.constructor === Body) && (body2 instanceof Body)) {
+            console.log("constructor");
+            body1.IBM();
+        } 
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
