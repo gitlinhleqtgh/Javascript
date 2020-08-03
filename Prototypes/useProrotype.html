@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Flight(airlines, numberFlight) {
+            this.airlines = airlines;
+            this.numberFlight = numberFlight;
+        }
+        // Flight.prototype.display = function () {
+        //     console.log(this.airlines);
+        //     console.log(this.numberFlight)
+        // }
+        Flight.prototype = {
+            display: function () {
+                console.log(this.airlines);
+                console.log(this.numberFlight);
+            },
+            toString: function () {
+                return "[Welcome Flight " + this.airlines + " No. " + this.numberFlight + " ]";
+            }
+        };
+        var flight = new Flight("VietNam Airlines", "VNA123");
+        flight.display();
+        console.log(flight.toString());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

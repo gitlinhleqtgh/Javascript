@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var passenger = {
+            name: "John"
+        };
+        console.log("name" in passenger);
+        console.log(passenger.hasOwnProperty("name"));
+        console.log("hasOwnProperty" in passenger);
+        console.log(passenger.hasOwnProperty("hasOwnProperty")); //false
+        console.log(Object.prototype.hasOwnProperty("hasOwnProperty"));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
