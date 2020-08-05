@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var Car = {
+            name: "",
+            model: "",
+            year: "",
+            speed: "",
+            toString: function () {
+                console.log(this.name + " { model: " + this.model + " - year: " + this.year + " - speed: " + this.speed + " km/h }");
+            }
+        }
+        var BMW = Object.create(Car, {
+            name: {
+                configurable: true,
+                enumerable: true,
+                writable: true,
+                value: "BMW"
+            },
+            model: {
+                configurable: true,
+                enumerable: true,
+                writable: true,
+                value: "Cadillac"
+            },
+            year: {
+                configurable: true,
+                enumerable: true,
+                writable: true,
+                value: 2020
+            },
+            speed: {
+                enumerable: true,
+                configurable: true,
+                writable: true,
+                value: 200
+            }
+        });
+
+        var Honda = Object.create(Car, {
+            name: {
+                configurable: true,
+                enumerable: true,
+                writable: true,
+                value: "Honda"
+            },
+            model: {
+                configurable: true,
+                enumerable: true,
+                writable: true,
+                value: "Sport"
+            },
+            year: {
+                configurable: true,
+                enumerable: true,
+                writable: true,
+                value: 2010
+            },
+            speed: {
+                configurable: true,
+                writable: true,
+                enumerable: true,
+                value: 300
+            }
+        });
+
+        BMW.toString();
+        Honda.toString();
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

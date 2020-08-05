@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Car(name, model, year, speed) {
+            this.name = name;
+            this.model = model;
+            this.year = year;
+            this.speed = speed;
+        }
+        Car.prototype.toString = function () {
+            console.log("Name: " + this.name + " - Model: " + this.model
+                + " - Year: " + this.year + " - Speed: " + this.speed + " km/h ");
+        };
+        Car.prototype.drive = function () {
+            return "Lest Gooooooooooooooo ";
+        };
+
+        function BMW(name, model, year, speed) {
+            this.name = name;
+            this.model = model;
+            this.year = year;
+            this.speed = speed;
+        }
+        BMW.prototype = new Car();
+        BMW.prototype.constructor = BMW;
+        BMW.prototype.toString = function () {
+            console.log("Name: " + this.name + " - Model: " + this.model
+                + " - Year: " + this.year + " - Speed: " + this.speed + " km/h ");
+        };
+        BMW.prototype.drive = function () {
+            return BMW.name + " " + Car.prototype.drive(this);
+        }
+
+        function Honda(name, model, year, speed) {
+            this.name = name;
+            this.model = model;
+            this.year = year;
+            this.speed = speed;
+        }
+        Honda.prototype = new BMW();
+        Honda.prototype.constructor = Honda;
+        Honda.prototype.toString = function () {
+            console.log("Name: " + this.name + " - Model: " + this.model
+                + " - Year: " + this.year + " - Speed: " + this.speed + " km/h ");
+        }
+        Honda.prototype.drive = function () {
+            return Honda.name + " " + Car.prototype.drive(this);
+        }
+
+        var car = new Car("Vinfast");
+        var bmw = new BMW("BMW", "Cadillac", 2020, 200);
+        var honda = new Honda("Honda", "Sport", 2010, 300);
+        car.toString();
+        console.log(Car.prototype.drive());
+        bmw.toString();
+        console.log(BMW.prototype.drive());
+        honda.toString();
+        console.log(Honda.prototype.drive());
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

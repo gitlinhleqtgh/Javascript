@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Doctor(name) {
+            this.name = name;
+        }
+        Doctor.prototype.treat = function () {
+            return "treated";
+        }
+        Doctor.prototype.toString = function () {
+            console.log("Doctor: " + this.name);
+        }
+        function Surgeon(name, type) {
+            this.name = name;
+            this.type = type;
+        }
+        Surgeon.prototype = new Doctor();
+        Surgeon.prototype.constructor = Surgeon;
+        Surgeon.prototype.toString = function () {
+            console.log("Surgeon: " + this.name + ", Type " + this.type);
+        }
+        Surgeon.prototype.treat = function () {
+            return "operated " + Doctor.prototype.treat(this);
+        }
+        var doctor = new Doctor("Linh");
+        var surgeon = new Surgeon("Linh Again", "Dental");
+
+        doctor.toString();
+        surgeon.toString();
+        console.log(doctor.treat());
+        console.log(surgeon.treat());
+        console.log(doctor instanceof Doctor);
+        console.log(doctor instanceof Object);
+        console.log(surgeon instanceof Surgeon);
+        console.log(surgeon instanceof Doctor);
+        console.log(surgeon instanceof Object);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
