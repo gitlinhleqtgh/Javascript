@@ -1,0 +1,27 @@
+.color-box .btn-style{
+    opacity: 0;
+}
+.color-box.main .btn-style{
+    opacity: 1;
+}
+.color-box.main{
+    margin-left: -44px;
+}
+
+button#yellow-color{
+    background: #edde45;
+    border: 2px solid white;
+}
+button#red-color{
+    background: #cf455c;
+    border: 2px solid white;
+}
+button#blue-color{
+    background: blue;
+    border: 2px solid white;
+}
+.btn-style{
+    border: 0;
+    width: 30px;
+    height: 30px;
+}
