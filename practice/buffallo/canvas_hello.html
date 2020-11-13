@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="578px" height="200px"></canvas>
+    <script>
+        //lay the HTMl
+        var canvas  =document.getElementById('myCanvas');
+        //Ve o mo hinh 2D
+        var context = canvas.getContext('2d');
+        context.font = '40pt Arial';
+        context.fillStyle = 'red';
+        //ve mot doan text tai vi tri 150px 100px
+        context.fillText('Hello World ! ',150,100);
+    </script>
+</body>
+</html>

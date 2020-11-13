@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="560" height="200"></canvas>
+    <script>
+        //lay the html
+        var canvas = document.getElementById('myCanvas');
+        //Ve o mo hinh 2D
+        var ctx=canvas.getContext("2d");
+        //Ve mot duong tron
+        ctx.beginPath();
+        ctx.arc(90,50,40,0*Math.PI,2*Math.PI);
+        ctx.stroke();
+    </script>
+</body>
+</html>
