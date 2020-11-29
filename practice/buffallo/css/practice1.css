@@ -1,0 +1,62 @@
+html{
+    background-color: #333333;
+}
+@font-face{
+    font-family: tron;
+    src: url(../fonts/Tr2n.ttf);
+}
+button{
+    font-family: tron;
+    font-size: 22px;
+    width: 250px;
+    height: 70px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: none;
+    border: 3px solid deepskyblue;
+    color: deepskyblue;
+    border-radius: 70px;
+    animation: resize 6s;
+    overflow: hidden;
+}
+button::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    background: deepskyblue;
+    animation: load 6s infinite;
+}
+button::after{
+    content: '';
+    position: absolute;
+    width: 15px;
+    top: 18px;
+    height: 15px;
+    border-bottom: 3px solid;
+    border-right: 3px solid;
+    box-shadow: 3px 3px #333333, 6px 6px deepskyblue;
+    transform: rotate(45deg);
+    animation: bounce 6s infinite;
+}
+@keyframes load{
+    0%,40% {height: 0;}
+    90%,100%{height: 100%;}
+}
+
+@keyframes resize{
+    0%,20% {line-height: 64px; width: 250px;}
+    25%,100%{line-height: 150px;border-color: deepskyblue;}
+    30%,100%{width: 70px;border-color: #444444;}
+}
+@keyframes bounce{
+    0%,20% { right: 25px;top:18px;}
+    30%,40%,50%,60%,70%,80%{top: 14px;}
+    35%,45%,55%,65%,75%,85%{top:22px}
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <form id="add-user-form">
+            <div>
+                <label for="">Username</label>
+                <input type="text" id="username" value="" />
+            </div>
+            <div>
+                <label for="">Password</label>
+                <input type="text" id="password" value="" />
+            </div>
+            <div>
+                <label for="">Email</label>
+                <input type="text" id="email" value="" />
+            </div>
+            <div>
+                <label>Gender:</label>
+                <input type="radio"
+                       id="male"
+                       value="M"
+                       name="gender">Nam
+                <input type="radio"
+                       id="female" 
+                       value="F" 
+                       name="gender">Nu
+            </div>
+            <div id="male-div" style="display: none;">
+                <p>ban chon la nam</p>
+            </div>
+            <div id="female-div" style="display: none;">
+                <p>ban chon la nu</p>
+            </div>
+            <div>
+                <button type="button" id="submit-btn">
+                    Add
+                </button>
+            </div>
+        </form>
+    </div>
+    <script>
+        let submitBtn = document.getElementById("submit-btn")
+
+        let unE = document.getElementById("username")
+        let pwE = document.getElementById("password")
+        let emE = document.getElementById("email")
+        
+        let maleElementRadio = document.getElementById("male")
+        let femaleElementRadio = document.getElementById("female")
+        let maleElementDiv = document.getElementById("male-div")
+        let femaleElementDiv = document.getElementById("female-div")
+
+        maleElementRadio.onchange = function () {
+            if(this.checked){
+                maleElementDiv.style.display = "block"
+                femaleElementDiv.style.display = "none"
+            }
+        }
+        femaleElementRadio.onchange = function () {
+            if(this.checked){
+                femaleElementDiv.style.display = "block"
+                maleElementDiv.style.display = "none"
+            }
+        }
+
+        submitBtn.onclick = () => {
+            if (unE.value.length < 6) {
+                unE.style.background = "red"
+                unE.style.borderColor = "red"
+
+                let pE = document.createElement("p")
+                pE.innerHTML = " vui long nhap >6 ky tu !"
+                unE.parentElement.appendChild(pE)
+
+            }
+            unE.onkeyup = () => {
+                unE.style.backgroundColor = "white"
+                unE.style.borderColor = "black"
+                if (unE.value.length >= 6) {
+                    unE.style.backgroundColor = "green"
+                    unE.style.borderColor = "green"
+                    unE.style.color = "white"
+                    if (unE.nextElementSibling)
+                        unE.parentElement.removeChild(unE.nextElementSibling)
+                }
+            }
+        } 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>User Login</h1>
+    <div>
+        <label>User Name</label>
+        <br>
+        <input type="text" size="32" id="txt1">
+        <div id="sms1"></div>
+    </div>
+    <div>
+        <label>Password</label>
+        <br>
+        <input type="password" size="32" id="txt2">
+        <div id="sms2"></div>
+    </div>
+
+    <div>
+        <button type="button" onclick="login()">Login</button>
+        <button type="button" onclick="cancel()">Clear</button>
+    </div>
+    <div id="sms"></div>
+    <script>
+        let usernames = ["admin", "author", "guest"]
+        let passwords = ["321", "abc", "xyz"]
+
+        let usernameInput = document.getElementById("txt1")
+        let passwordInput = document.getElementById("txt2")
+
+        usernameInput.onkeyup = () => {
+            if (usernameInput.value.length < 5) {
+                usernameInput.style.backgroundColor = "red"
+                usernameInput.style.color = "white"
+            } else {
+                usernameInput.style.backgroundColor = "green"
+                usernameInput.style.color = "white"
+            }
+
+        }
+        passwordInput.onkeyup = () => {
+            if (passwordInput.value.length < 3) {
+                passwordInput.style.backgroundColor = "red"
+                passwordInput.style.color = "white"
+            } else {
+                passwordInput.style.backgroundColor = "green"
+                passwordInput.style.color = "white"
+            }
+        }
+
+
+        function login() {
+            let username = document.getElementById("txt1").value
+            let password = document.getElementById("txt2").value
+
+
+            let sms = ""
+            let sms1 = ""
+            let sms2 = ""
+
+            for (let i = 0; i < usernames.length; i++) {
+                if (username == usernames[i]) {
+                    sms = ""
+                    if (password == passwords[i]) {
+                        usernames.push(username + "1")
+                        console.log(usernames)
+                        passwords.push(password + "5")
+                        sms = "Login success and You was add new element to array ";
+
+                        //window.location.href = "http://www.w3schools.com";
+                    } else {
+                        sms2 = "Invalid password "
+                    }
+                    break;
+                } else {
+                    sms1 = "Invalid username"
+                }
+            }
+            document.getElementById("sms").innerHTML = sms
+            document.getElementById("sms1").innerHTML = sms1
+            document.getElementById("sms2").innerHTML = sms2
+        }
+
+        function cancel() {
+            document.getElementById("txt1").value = ""
+            document.getElementById("txt2").value = ""
+            document.getElementById("txt1").focus()
+        }
+
+    </script>
+
+</body>
+
+</html>

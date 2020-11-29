@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+    <script>
+        //set
+        localStorage.setItem("username","lin")
+        let username = localStorage.getItem("username")
+
+        console.log(username);
+        document.getElementById("root").innerHTML = username
+
+        //save doi tuong vao localstorage
+        let user = {
+            id: 1,
+            name: "lin",
+            age: 22,
+            married: "quang tri"
+        }
+        
+        localStorage.setItem("user",JSON.stringify(user))
+
+        //read
+        const u = localStorage.getItem("user")
+        if(u){
+            const u = localStorage.getItem("user")
+            if(u) {
+                const uObject = JSON.parse(u)
+                console.log(uObject)
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var personList = [
+            {id:1,name: "A"},
+            { id:2,name: "B"},
+            { id:3,name: "C"}
+        ];
+        for(let i = 0;i<personList.length;i++)
+        {
+            let person = personList[i];
+            //for in
+            for(var k in person){
+                console.log(person[k]);
+            }
+        }
+        let p = {id: 4,name: "D"}
+        personList.push(p);
+        console.log(personList);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

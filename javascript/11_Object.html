@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var person = {
+            name:"Linh",
+            age: 20,
+            address:"Da Nang",
+            talk:function(){
+                return this.name+" talk about "+this.address+", age "+this.age;
+            }
+        };
+        console.log(person.talk());
+        console.log(person); 
+        person.married = false;
+        console.log(person);
+        person.walk = function(){
+            return this.name+" walk 10km on one day. ";
+        }
+        console.log(person.walk());
+        //cach 2
+        var personA = new Object();
+        personA.name = "Le";
+        personA.walk = function()
+        {
+            console.log(this.name+" walk 20km on one day. ");
+        }
+        personA.walk()
+        
+        var personB = {
+            name:"Van",
+            setName: function(v)
+            {
+                this.name=v;
+            },
+            set setName1(v){
+                this.name=v;
+            },
+            getName: function(){
+                return this.name;
+            },
+            get getName1()
+            {
+                return this.name;
+            }
+        }
+        console.log(personB.getName());
+        personB.setName("Kha Banh");
+        console.log(personB.getName1);
+        personB.setName1 = "Tran Duc Bo";
+        console.log(personB.name);
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
