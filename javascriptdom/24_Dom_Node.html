@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="header">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Products</a></li>
+        </ul>
+    </div>
+    <div class="footer">
+        <p>Copyright ... </p>
+    </div>
+    <script>
+        let ulElem = document.getElementById("header").firstElementChild
+        let li = document.createElement("li")
+        let a = document.createElement("a")
+        a.href = "https://Google.com"
+        a.innerHTML = "Ling Blog"
+        li.appendChild(a)
+        ulElem.appendChild(li)
+//      ulElem.prepend(li)
+        
+        let liFirst = ulElem.firstElementChild
+        console.log(liFirst)
+        ulElem.replaceChild(li,liFirst)
+
+        //xoa
+        ulElem.removeChild(li)
+    </script>
+</body>
+</html>

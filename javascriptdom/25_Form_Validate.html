@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <form id="add-user-form">
+            <div>
+                <label for="">Username</label>
+                <input type="text" id="username" value="" />
+            </div>
+            <div>
+                <label for="">Password</label>
+                <input type="text" id="password" value="" />
+            </div>
+            <div>
+                <label for="">Email</label>
+                <input type="text" id="email" value="" />
+            </div>
+            <div>
+                <button type="button" id="submit-btn">
+                    Add
+                </button>
+            </div>
+        </form>
+    </div>
+    <script>
+        let submitBtn = document.getElementById("submit-btn")
+        console.log(submitBtn)
+
+        let unE = document.getElementById("username")
+        let pwE = document.getElementById("password")
+        let emE = document.getElementById("email")
+
+
+        submitBtn.onclick = () => {
+            if (unE.value.length < 6) {
+                unE.style.background = "red"
+                unE.style.borderColor = "red"
+
+                let pE = document.createElement("p")
+                pE.innerHTML = " vui long nhap > 6 ky tu !"
+                unE.parentElement.appendChild(pE)
+
+            }
+            unE.onkeyup = () => {
+                unE.style.backgroundColor = "white"
+                unE.style.borderColor = "black"
+                if (unE.value.length >= 6) {
+                    unE.style.backgroundColor = "green"
+                    unE.style.borderColor = "green"
+                    unE.style.color = "white"
+                    if (unE.nextElementSibling)
+                        unE.parentElement.removeChild(unE.nextElementSibling)
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

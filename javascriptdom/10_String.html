@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Javascript</title>
+    <script>
+        var s = "Hello javascript, It is easy !";
+        console.log(s);
+        var s2 = " Javasript is ES";
+        var s3 = s + s2;
+        var s4 = s.concat(s2);
+        console.log(s4);
+        console.log(s3);
+        for(i=0; i<s4.length;i++){
+            console.log(s4.charAt(i));
+        }
+        //tim kiem
+        var index = s.indexOf("easy");//-1 ko tim thay, index neu ma tim thay
+        console.log(index);
+        var lastIndex = s.lastIndexOf("e");
+        console.log(lastIndex);
+        //
+        var substr1 = s.substr(0,16);
+        console.log(substr1);
+        var substr2 = s.substring();
+        //convert string -> mang
+        var replace = s.replace("easy","hard");
+        console.log(replace);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
