@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function chia(x,y)
+        {
+            if(y == 0)
+            {
+                throw "y = 0";
+            }
+            return x/y;
+        }
+        try{
+            var thuong = chia(10,0);
+            console.log(thuong);
+        }catch(err){
+            console.log("loi chia 0 "+err);
+        }finally{
+            console.log("sai dung chi tau cung xuat hien");
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <form id="add-user-form">
+            <div>
+                <label for="">Username</label>
+                <input type="text" id="username" value="" />
+            </div>
+            <div>
+                <label for="">Password</label>
+                <input type="text" id="password" value="" />
+            </div>
+            <div>
+                <button type="button" id="submit-btn">
+                    Add
+                </button>
+            </div>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Password</th>
+                </tr>
+            <tbody id="body-table">
+                <tr>
+                    <td>Js</td>
+                    <td>123</td>
+                </tr>
+            </tbody>
+            </thead>
+        </table>
+    </div>
+    <script>
+        let submitBtn = document.getElementById("submit-btn")
+        let usernameElement = document.getElementById("username")
+        let passwordElement = document.getElementById("password")
+
+        submitBtn.onclick = () =>
+        {
+            let uName = usernameElement.value
+            let pWord = passwordElement.value
+            let person = {
+                name: uName,
+                password: pWord
+            }
+            createTr(person)
+        }
+
+        let jsonObject = [
+            {
+                name: 'Ruby',
+                password: '123456'
+            },
+            {
+                name: 'Javascript',
+                password: '123456'
+            },
+            {
+                name: 'sql',
+                password: '123456'
+            }
+        ]
+
+        for (let i = 0; i < jsonObject.length; i++) {
+            createTr(jsonObject[i])
+        }
+        function createTr(person) {
+            let trElement = document.createElement('tr')
+
+            let tdElementColumn1 = document.createElement("td")
+            tdElementColumn1.innerHTML = person.name
+
+            let tdElementColumn2 = document.createElement("td")
+            tdElementColumn2.innerHTML = person.password
+
+            trElement.appendChild(tdElementColumn1)
+            trElement.appendChild(tdElementColumn2)
+
+            let tdBody = document.getElementById("body-table")
+            tdBody.appendChild(trElement)
+        }
+
+    </script>
+</body>
+
+</html>

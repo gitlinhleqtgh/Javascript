@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="header">
+        <ul>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+        </ul>
+    </div>
+    <div class="footer">
+        <p>Copyright</p>
+    </div>
+    <script>
+        let divHeader = document.getElementById("header");
+        console.log(divHeader);
+        let aList = divHeader.getElementsByTagName("a");
+        console.log("SL tag a :"+aList.length)
+        for(let i = 0;i<aList.length;i++)
+        {
+            aList[i].href = "http://google.com";
+            aList[i].setAttribute("title","Google");
+            console.log(aList[i].href);
+            console.log(aList[i].getAttribute("title"));
+            aList[i].innerHTML = "<b>Google</b>";
+        }
+
+        let divList = document.getElementsByTagName("div");
+        let footerDiv = document.getElementsByClassName("footer")
+
+        let pList = document.getElementsByTagName("p");
+
+        let footerDivList = document.querySelectorAll("div.footer")
+
+        let pFooterList = footerDivList[0].getElementsByTagName("p")
+
+        pFooterList[0].innerHTML = "Google"
+
+    </script>
+    
+</body>
+</html>
